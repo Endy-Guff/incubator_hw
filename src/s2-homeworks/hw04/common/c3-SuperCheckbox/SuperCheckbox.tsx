@@ -30,7 +30,6 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
         if (onChangeChecked) {
             onChangeChecked(e.currentTarget.checked)
         }
-
     }
 
     const finalInputClassName = s.checkbox
@@ -41,7 +40,7 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
             <input
                 id={id}
                 type={'checkbox'}
-                onChange={onChangeCallback}
+                onChange={onChangeChecked ? onChangeCallback : onChange}
                 className={finalInputClassName}
                 {...restProps} // отдаём инпуту остальные пропсы если они есть (checked например там внутри)
             />
