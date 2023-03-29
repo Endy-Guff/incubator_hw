@@ -1,13 +1,33 @@
 .sidebar {
+    height: 100vh;
+    position: absolute;
+    background: #fff;
+    width: 318px;
+    z-index: 1;
+    left: -318px;
+    transition: .3s;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .sidebar.open {
+    left: -43px;
 }
 
 .background {
+    z-index: 1;
+    position: absolute;
+    inset: -100px;
+    background: #000;
+    opacity: .5;
 }
 
 .nav {
+    display: flex;
+    flex-direction: column;
 }
 
 .nav a {
@@ -17,8 +37,14 @@
 }
 
 .nav a.active {
+    color: red;
 }
 .close {
+    margin-left: auto;
+    background: transparent;
+    border: none;
+    width: 13px;
+    height: 13px;
 }
 
 .close img {
