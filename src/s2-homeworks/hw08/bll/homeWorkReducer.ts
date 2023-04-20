@@ -9,7 +9,7 @@ export const homeWorkReducer = (state: UserType[], action: ActionType): UserType
         case 'sort': { // by name
             let newState = [...state]
             if (action.payload === 'up'){
-                newState = state.sort((a, b)=>{
+                newState.sort((a, b)=>{
                     if (a.name>b.name){
                         return 1
                     }
@@ -20,7 +20,7 @@ export const homeWorkReducer = (state: UserType[], action: ActionType): UserType
                 })
             }
             if (action.payload === 'down'){
-                newState = state.sort((a, b)=>{
+                newState.sort((a, b)=>{
                     if (a.name<b.name){
                         return 1
                     }
@@ -33,16 +33,7 @@ export const homeWorkReducer = (state: UserType[], action: ActionType): UserType
             return newState // need to fix
         }
         case 'check': {
-            const newState = [...state.sort((a, b)=>{
-                if (a.age>b.age){
-                    return -1
-                }
-                if (a.age<b.age){
-                    return  1
-                }
-                return 0
-            })]
-            return newState.filter(el=>el.age>=action.payload) // need to fix
+            return state.filter(el=>el.age>=action.payload) // need to fix
         }
         default:
             return state
