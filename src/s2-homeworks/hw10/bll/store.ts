@@ -5,6 +5,7 @@ import { themeReducer } from '../../hw12/bll/themeReducer'
 const reducers = combineReducers({
     loading: loadingReducer, // hw10
     theme: themeReducer, // hw12
+    themes: themeReducer
 })
 
 const store = legacy_createStore(reducers)
