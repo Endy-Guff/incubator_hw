@@ -67,7 +67,7 @@ const HW15 = () => {
         setCount(newCount)
         // setPage(
         // setCount(
-            sendQuery(searchParams)
+            sendQuery({page: newPage.toString(), count: newCount.toString()})
             setSearchParams({page: newPage.toString(), count: newCount.toString()})
         // sendQuery(
         // setSearchParams(
